@@ -1,14 +1,22 @@
 #include <cstdio>
 
-void fizz_buzz(int answer){
+void fizz_buzz(int value){
 
-  if(answer == 1) {
+  if(value == 0) {
+    printf("%d", value);
+  }
+  else if(value % 3 == 0 && value % 5 == 0) {
+    printf("fizzbuzz");
+  }
+  else if(value % 3 == 0) {
     printf("fizz");
   }
-  else {
-    printf("buzz\n");
+  else if(value % 3 == 0) {
+    printf("buzz");
   }
-
+  else {
+    printf("%d", value);
+  }
 }
 
 int step_function(int x){
@@ -29,11 +37,12 @@ int step_function(int x){
 int main (){
   
   for(int x = -10; x < 21; x++){
-    printf("%d:%d\n", x, step_function(x));
+    printf("Step: %d:%d\n", x, step_function(x));
+    printf("Step: %d:", x);
+    fizz_buzz(x);
+    printf("\n");
   }
 
-  int answer = 10;
-  fizz_buzz(answer);
   return 0;
 }
 
